@@ -2,7 +2,7 @@
   .ineschr 1   ; 1x  8KB CHR data
   .inesmap 0   ; mapper 0 = NROM, no bank swapping
   .inesmir 1   ; background mirroring
-  
+
 
 ;;;;;;;;;;;;;;;
 
@@ -44,7 +44,7 @@ vblankwait2:      ; Second wait for vblank, PPU is ready after this
   BPL vblankwait2
 
 
-  LDA #%10000000   ;intensify blues
+  LDA #%01000000   ;intensify blues
   STA $2001
 
 Forever:
