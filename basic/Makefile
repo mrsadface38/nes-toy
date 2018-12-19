@@ -9,7 +9,7 @@ background.nes: background.asm mario.chr
 	nesasm background.asm
 
 clean:
-	rm background.nes background.fns
+	rm -f background.nes background.fns
 
 run: background.nes
 	mednafen background.nes
