@@ -5,11 +5,11 @@
 
 all: background.nes
 
-background.nes: background.asm
+background.nes: background.asm mario.chr
 	nesasm background.asm
 
 clean:
-	rm background.nes
+	rm background.nes background.fns
 
 run: background.nes
-	nestopia background.nes
+	mednafen background.nes
