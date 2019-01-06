@@ -7,7 +7,7 @@ sprites.nes: sprites.asm
 	nesasm sprites.asm
 
 clean:
-	rm -f sprites.nes
+	rm -f sprites.nes sprites.fns
 
 run: sprites.nes
 	mednafen sprites.nes
