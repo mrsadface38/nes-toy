@@ -1,5 +1,5 @@
 	.inesprg 1	; 1x 16KB PRG code
-	.ineschr 1	; 1x	 8KB CHR data
+	.ineschr 1	; 1x 8KB CHR data
 	.inesmap 0	; mapper 0 = NROM, no bank swapping
 	.inesmir 1	; background mirroring
 
@@ -35,7 +35,7 @@ clrmem:
 	STA $0600, x
 	STA $0700, x
 	LDA #$FE
-	STA $0200, x	;move all sprites off screen
+	STA $0200, x	; move all sprites off screen
 	INX
 	BNE clrmem
 
@@ -68,6 +68,16 @@ LoadPalettesLoop:
 	LDA #$00
 	STA $0201		; tile number = 0
 	STA $0202		; color = 0, no flipping
+
+; Try placing another sprite
+	LDA #$80
+	STA $0204		; set sprite vert
+	LDA #$88
+	STA $0207		; set sprite horiz
+	LDA #$01
+	STA $0205		; tile number = 0
+	STA $0206		; color = 0, no flipping
+; End attempt
 
 	LDA #%10000000	; enable NMI, sprites from Pattern Table 0
 	STA $2000
