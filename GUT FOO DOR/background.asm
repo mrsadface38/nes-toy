@@ -43,8 +43,6 @@ vblankwait2:	; Second wait for vblank, PPU is ready after this
 	BIT $2002
 	BPL vblankwait2
 
-; From here down is important
-
 
 LoadPalettes:
 	LDA $2002		; read PPU status to reset the high/low latch
